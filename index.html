@@ -115,6 +115,9 @@
                 <a href="leedonate.html" class="text-sm text-slate-300 hover:text-white px-3.5 py-2 rounded-xl transition-colors">
                     <i class="fa-solid fa-lightbulb text-amber-400 mr-1"></i> เสนอฟีเจอร์
                 </a>
+                <a href="#map" class="text-sm text-slate-300 hover:text-white px-3.5 py-2 rounded-xl transition-colors">
+                    <i class="fa-solid fa-location-dot text-pink-400 mr-1"></i> แผนที่ตั้ง
+                </a>
                 <a href="#donate" class="text-sm text-white bg-purple-600 hover:bg-purple-500 px-3.5 py-2 rounded-xl transition-colors font-medium">
                     <i class="fa-solid fa-qrcode mr-1"></i> โดเนท (QR เดโม)
                 </a>
@@ -312,6 +315,67 @@
             หมายเหตุ: หน้านี้เป็นระบบจำลองเพื่อแสดงแนวคิดเท่านั้น QR Code ที่แสดงไม่ใช่ QR พร้อมเพย์จริง สแกนแล้วจะไม่มีการโอนเงิน และไม่มีการตรวจสอบการชำระเงินใดๆ
         </p>
     </main>
+</div>
+<div id="view-map" class="view" hidden>
+    <header class="w-full border-b border-brand-border bg-brand-bg/90 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+            <span class="text-lg font-extrabold bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-300 bg-clip-text text-transparent">LeeDonate</span>
+            <a href="#home" class="text-sm text-slate-300 hover:text-white"><i class="fa-solid fa-arrow-left mr-1"></i> กลับหน้าหลัก</a>
+        </div>
+    </header>
+
+    <main class="flex-1 w-full max-w-3xl mx-auto px-4 py-10">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-extrabold text-white mb-2"><i class="fa-solid fa-location-dot text-pink-400 mr-2"></i>แผนที่ตั้งบริษัท</h1>
+            <p class="text-slate-400 text-sm">ตำแหน่งที่ตั้งและวิธีการเดินทางมาหาเรา</p>
+        </div>
+
+        <!-- รูปแผนที่: วางไฟล์รูปไว้โฟลเดอร์เดียวกับ index.html แล้วตั้งชื่อว่า map.jpg (หรือแก้ชื่อใน src ด้านล่าง) -->
+        <section class="bg-brand-card border border-brand-border rounded-3xl p-3 shadow-2xl">
+            <a id="map-link" href="map.jpg" target="_blank" rel="noopener" class="block rounded-2xl overflow-hidden">
+                <img id="map-img" data-map="1" src="map.jpg" alt="แผนที่ตั้งบริษัท LeeDonate" class="w-full h-auto object-cover">
+            </a>
+            <div id="map-placeholder" class="hidden flex-col items-center justify-center text-center text-slate-500 text-sm min-h-[18rem] rounded-2xl border-2 border-dashed border-brand-border">
+                <i class="fa-solid fa-map-location-dot text-5xl mb-3 text-purple-400/40"></i>
+                ยังไม่มีรูปแผนที่<br>
+                <span class="text-xs">นำไฟล์ <code class="text-purple-300">map.jpg</code> มาวางไว้โฟลเดอร์เดียวกับ index.html</span>
+            </div>
+            <p class="text-[11px] text-slate-500 text-center mt-2">กดที่รูปเพื่อดูภาพขนาดเต็ม</p>
+        </section>
+
+        <!-- รายละเอียดที่ตั้ง: แก้ข้อความตรงนี้ได้เลย -->
+        <section class="bg-brand-card border border-brand-border rounded-3xl p-6 mt-6 space-y-4">
+            <div class="flex items-start gap-3">
+                <i class="fa-solid fa-building text-purple-400 mt-1 w-5 text-center"></i>
+                <div>
+                    <div class="text-xs text-slate-400">ที่อยู่</div>
+                    <div class="text-white text-sm">[ใส่ที่อยู่บริษัท เลขที่ ถนน ตำบล อำเภอ จังหวัด รหัสไปรษณีย์]</div>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <i class="fa-solid fa-clock text-purple-400 mt-1 w-5 text-center"></i>
+                <div>
+                    <div class="text-xs text-slate-400">เวลาทำการ</div>
+                    <div class="text-white text-sm">[เช่น จันทร์ - ศุกร์ 09:00 - 17:00 น.]</div>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <i class="fa-solid fa-envelope text-purple-400 mt-1 w-5 text-center"></i>
+                <div>
+                    <div class="text-xs text-slate-400">ติดต่อ</div>
+                    <div class="text-white text-sm">kuy90281@gmail.com</div>
+                </div>
+            </div>
+            <!-- ปุ่มเปิด Google Maps: ใส่ลิงก์จริงแทน # แล้วลบ hidden ออก -->
+            <a href="#" target="_blank" rel="noopener" hidden class="block w-full text-center rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold py-3 transition-colors">
+                <i class="fa-solid fa-diamond-turn-right mr-1"></i> เปิดใน Google Maps
+            </a>
+        </section>
+    </main>
+
+    <footer class="w-full border-t border-brand-border bg-brand-bg py-6 text-center text-xs text-slate-400">
+        <div class="max-w-7xl mx-auto px-4">© 2026 <strong class="text-white">LeeDonate</strong></div>
+    </footer>
 </div>
 <div id="view-effects" class="view" hidden>
 
@@ -1258,11 +1322,12 @@
         // สลับหน้าด้วย hash: #home (หน้าหลัก) / #effects (ตลาดเอฟเฟกต์)
         function route() {
             const h = location.hash;
-            const view = h === '#effects' ? 'effects' : h === '#donate' ? 'donate' : 'home';
-            ['home', 'effects', 'donate'].forEach(v => { document.getElementById('view-' + v).hidden = (v !== view); });
+            const view = h === '#effects' ? 'effects' : h === '#donate' ? 'donate' : h === '#map' ? 'map' : 'home';
+            ['home', 'effects', 'donate', 'map'].forEach(v => { document.getElementById('view-' + v).hidden = (v !== view); });
             document.title = {
                 effects: 'LeeDonate - ตลาดเอฟเฟกต์ คลังของฉัน & Creator Studio',
                 donate: 'LeeDonate - โดเนทผ่าน PromptPay QR',
+                map: 'LeeDonate - แผนที่ตั้งบริษัท',
                 home: 'LeeDonate - ศูนย์รวมซอร์สโค้ดโดเนทสตรีมเมอร์โอเพนซอร์ส'
             }[view];
             if (view !== 'home' || h === '' || h === '#home') window.scrollTo(0, 0);
@@ -1274,6 +1339,12 @@
         document.addEventListener('error', function (e) {
             const img = e.target;
             if (img.tagName !== 'IMG') return;
+            if (img.dataset.map) {
+                document.getElementById('map-link').style.display = 'none';
+                const ph = document.getElementById('map-placeholder');
+                ph.classList.remove('hidden'); ph.classList.add('flex');
+                return;
+            }
             const holder = img.closest('.w-12, .w-6') ;
             if (holder) {
                 const ph = document.createElement('span');
